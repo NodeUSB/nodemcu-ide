@@ -29,8 +29,6 @@ function getFile(p,f)
   tmr.alarm(5,2000,0,function() sk:close() sk=nil strPost = nil file.close() collectgarbage() end)
 end
 
-i = 0
-
 tmr.alarm(0,3000,1,function()
 
      ip = wifi.sta.getip()
@@ -47,7 +45,5 @@ tmr.alarm(0,3000,1,function()
           
           collectgarbage()
      end
-
-     i = i + 1
 
 end)
