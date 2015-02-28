@@ -1,6 +1,11 @@
 # nodemcu-ide
 Browser based Lua IDE for ESP8266 SoC based boards
 
+![ide-window](https://cloud.githubusercontent.com/assets/5788310/6428719/91a59ce4-bf79-11e4-9949-1dbce870ff43.png)
+
+### Why?
+I wrote the IDE while working on NodeUSB. I was testing 5 different ESP8266 boards at the same time, I do not like to connect to UART RX/TX and ground pins all the time. And when I bring back the temperature sensors from outside the house and upload the new codes, it will read the temperature inside the house. 
+
 ### How to get started (NodeUSB users go to step 6)
 1. You need NodeMCU firmware with node.compile() (2015-02-13 and late)
 
@@ -20,7 +25,9 @@ https://github.com/NodeUSB/nodemcu-ide/blob/master/init.lua
 ### Tips
 * Only works if ESP8266 is in the same network
 * ESP8266 is very memory constrained, use 'Save&Compile' before run Lua codes will use less heap
+* 'Run Selection' only good for few lines of code, if no response, 'Save&Compile' then 'Run Script'
 * Read large file is slow, can takes 10-30 seconds, be patient
 * Reboot ESP8266 if no response, or power cycle it
+* Remember, 'Save&Compile' is your best friend
 * Due to very limited heap size,I have to use lots of hacks to reduce the heap used,for example,it is very difficult to upload large block of codes to ESP8266 using http post, if I use multi parts, the i.lua in ESP8266 will use more memory, I ended up to let IDE upload to my server's memcache first, then i.lua download from my server, so if you see any funny codes, do let me know.
 * Due to the reason above, i.lua is not secure, you can POST lua codes and it will them, please keep that in mind.
