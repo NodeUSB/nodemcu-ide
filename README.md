@@ -4,7 +4,7 @@ Browser based Lua IDE for ESP8266 SoC based boards
 ![ide-window](https://cloud.githubusercontent.com/assets/5788310/6428719/91a59ce4-bf79-11e4-9949-1dbce870ff43.png)
 
 ### Why?
-I wrote the IDE while working on sensors for NodeUSB. I was testing 5 different ESP8266 boards at the same time, I do not like to connect to UART RX/TX and ground pins everytime I need to update source code. And when I bring back the temperature sensors from outside the house and upload the new code, it will read the temperature inside the house, which can be almost 50 degrees higher than outside in winter.
+I wrote the IDE while working on sensors for NodeUSB. I was testing 5 different ESP8266 boards at the same time, I do not like to connect to UART RX/TX and ground pins everytime I need to update source code, also, I'd like to use different PCs and Macs to update Lua code. One more reason, if I bring back the temperature sensors from outside the house to upload the new code, it will read the temperature inside the house, which can be 50 degrees celsius higher than outside(Yes! We got -25 this winter in Toronto).
 
 ### How to get started (NodeUSB users go to step 6)
 1. You need NodeMCU firmware with node.compile() (2015-02-13 and late)
