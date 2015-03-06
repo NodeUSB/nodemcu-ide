@@ -4,13 +4,15 @@ _G[moduleName] = M
 
 host="i.nodeusb.com"
 
-function M.g(p,f)
-  local strPost = "GET /"..p.."f="..f.." HTTP/1.1\r\nHost: "..host.."\r\n\r\n"
+function M.g(p,f,a)
+  local strPost = "GET /"..p.."f="..f.." HTTP/1.0\r\nHost: "..host.."\r\n\r\n"
   local sk=net.createConnection(net.TCP, 0)
 
   local s=0
 
-  file.remove(f)
+  if a==nil then
+     file.remove(f)
+  end
   file.open(f,"a")
 
   sk:on("connection", function(sck) sk:send(strPost) end)
